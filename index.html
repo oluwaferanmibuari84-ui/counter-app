@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Counter App</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:#f5f5f5;
+    }
+
+    .counter-box{
+      background:#fff;
+      padding:40px;
+      border-radius:20px;
+      text-align:center;
+      box-shadow:0 10px 25px rgba(0,0,0,0.1);
+      width:320px;
+    }
+
+    h1{
+      margin-bottom:20px;
+      color:#111;
+    }
+
+    #count{
+      font-size:70px;
+      font-weight:bold;
+      margin:20px 0;
+      color:#000;
+    }
+
+    .buttons{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    button{
+      padding:12px 18px;
+      border:none;
+      border-radius:10px;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+      min-width:90px;
+    }
+
+    .decrease{
+      background:#111;
+      color:#fff;
+    }
+
+    .increase{
+      background:#111;
+      color:#fff;
+    }
+
+    .reset{
+      background:#e5e5e5;
+      color:#111;
+    }
+
+    button:hover{
+      transform:translateY(-2px);
+      opacity:0.9;
+    }
+
+    .note{
+      margin-top:20px;
+      font-size:14px;
+      color:#666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="counter-box">
+    <h1>Counter App</h1>
+
+    <div id="count">0</div>
+
+    <div class="buttons">
+      <button class="decrease" onclick="decrease()">- Minus</button>
+      <button class="increase" onclick="increase()">+ Plus</button>
+      <button class="reset" onclick="resetCounter()">Reset</button>
+    </div>
+
+    <p class="note">Click the buttons to change the number.</p>
+  </div>
+
+  <script>
+    // Starting value
+    let count = 0;
+
+    // Select the number on the page
+    const countDisplay = document.getElementById('count');
+
+    // Increase function
+    function increase(){
+      count++;
+      countDisplay.textContent = count;
+    }
+
+    // Decrease function
+    function decrease(){
+      count--;
+      countDisplay.textContent = count;
+    }
+
+    // Reset function
+    function resetCounter(){
+      count = 0;
+      countDisplay.textContent = count;
+    }
+  </script>
+
+</body>
+</html>
